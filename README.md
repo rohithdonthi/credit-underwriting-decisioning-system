@@ -18,3 +18,9 @@ This repository implements a production-style **underwriting decisioning pipelin
   ```bash
   streamlit run app/streamlit_app.py
 
+  ## Quickstart (3 commands)
+```bash
+python -m src.data.make_dataset --out data/sample/credit_sample.csv
+python -m src.models.train --data data/sample/credit_sample.csv
+streamlit run app/streamlit_app.py
+
