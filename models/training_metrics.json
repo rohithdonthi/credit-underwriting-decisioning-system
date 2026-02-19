@@ -1,0 +1,12 @@
+{
+  "logistic_auc": 0.8154865379087562,
+  "logistic_ks": 0.47629150624072397,
+  "logistic_brier": 0.10506664307806436,
+  "logistic_lift_10pct": 3.3222591362126246,
+  "logistic_default_rate": 0.1505,
+  "gradient_boosting_auc": 0.9677844501064727,
+  "gradient_boosting_ks": 0.8358111767915072,
+  "gradient_boosting_brier": 0.0459440775302435,
+  "gradient_boosting_lift_10pct": 5.980066445182724,
+  "gradient_boosting_default_rate": 0.1505
+}
