@@ -206,7 +206,7 @@ marimo/_static/
 marimo/_lsp/
 __marimo__/
 
-# Project-specific
-models/
+# Project-specific - trained model artifacts and generated outputs
+/models/
 predictions*.csv
 data/sample/*.csv
