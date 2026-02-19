@@ -7,7 +7,6 @@ using a time-based split to simulate real-world deployment scenarios.
 
 import argparse
 import os
-import pickle
 from datetime import datetime
 import numpy as np
 import pandas as pd
