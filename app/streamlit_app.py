@@ -1,10 +1,15 @@
 # app/streamlit_app.py
 import json
+import sys
 from pathlib import Path
 
 import joblib
 import pandas as pd
 import streamlit as st
+
+ROOT_DIR = Path(__file__).resolve().parent.parent
+if str(ROOT_DIR) not in sys.path:
+    sys.path.append(str(ROOT_DIR))
 
 from src.config import THRESH_APPROVE, THRESH_REVIEW
 from src.models.scorecard import prob_to_score, decision_from_prob
@@ -13,7 +18,7 @@ st.set_page_config(page_title="Underwriting Decisioning Demo", layout="wide")
 st.title("Underwriting Decisioning System — Demo UI")
 st.caption("Scores applicants with P(creditworthy) → scorecard score → decision. Includes calibration + artifacts.")
 
-MODEL_DIR = Path("models")
+MODEL_DIR = ROOT_DIR / "models"
 
 @st.cache_resource
 def load_artifacts():
@@ -41,7 +46,7 @@ st.markdown("### 1) Upload CSV (or use sample)")
 uploaded = st.file_uploader("Upload a CSV with feature columns", type=["csv"])
 
 if uploaded is None:
-    sample_path = Path("data/sample/credit_sample.csv")
+    sample_path = ROOT_DIR / "data" / "sample" / "credit_sample.csv"
     if sample_path.exists():
         df = pd.read_csv(sample_path)
         st.info("Using sample dataset: data/sample/credit_sample.csv")
