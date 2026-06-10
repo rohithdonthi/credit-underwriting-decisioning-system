@@ -86,6 +86,8 @@ UI / Demo         Streamlit
 Visualisation     Matplotlib, Seaborn
 Environment       Python 3.10
 
+Streamlit : https://credit-underwriting-decisioning-system-cdtsdqhdh5awgnmmtoyvnm.streamlit.app/#1-upload-csv-or-use-sample
+
 📄 License
 MIT License — see LICENSE for details.
 
