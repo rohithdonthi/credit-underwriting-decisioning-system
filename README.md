@@ -1,5 +1,5 @@
 Production-style underwriting decisioning pipeline that generates a calibrated creditworthiness probability, maps it to a scorecard score, produces decision + reason codes, and logs monitoring-ready artifacts (drift/PSI, metrics, score distribution) using time-based validation.
-Built as a public recreation of production credit risk work across 50,000+ accounts — anonymised and reproduced with synthetic data.
+Built as a public recreation of production credit risk work across 50,000+ accounts - anonymised and reproduced with synthetic data.
 
 📊 Model Performance
 Metric      Value           Benchmark 
@@ -48,7 +48,7 @@ Behavioral · Bureau · Transactional
 bashpython -m src.data.make_dataset --out data/sample/credit_sample.csv
 python -m src.models.train --data data/sample/credit_sample.csv
 streamlit run app/streamlit_app.py
-Or try the live hosted demo — no setup needed.
+Or try the live hosted demo - no setup needed.
 
 📁 Repository Structure
 credit-underwriting-decisioning-system/
@@ -68,9 +68,9 @@ credit-underwriting-decisioning-system/
 
 🔑 Key Design Decisions
 Time-based validation (not random split)
-Prevents data leakage — model always trained on past data, evaluated on future data. Mirrors real production deployment.
+Prevents data leakage - model always trained on past data, evaluated on future data. Mirrors real production deployment.
 Probability calibration
-Raw model scores are not probabilities. Sigmoid calibration ensures P(good) = 0.8 actually means 80% of applicants with that score are creditworthy — critical for setting reliable approval thresholds.
+Raw model scores are not probabilities. Sigmoid calibration ensures P(good) = 0.8 actually means 80% of applicants with that score are creditworthy - critical for setting reliable approval thresholds.
 PSI-based drift detection
 Population Stability Index monitors input feature distributions over time. Flags when the applicant population shifts before it degrades model performance. Drift alert triggers at PSI > 0.2 (industry standard).
 Scorecard mapping
@@ -89,5 +89,5 @@ Environment       Python 3.10
 Streamlit : https://credit-underwriting-decisioning-system-cdtsdqhdh5awgnmmtoyvnm.streamlit.app/#1-upload-csv-or-use-sample
 
 📄 License
-MIT License — see LICENSE for details.
+MIT License - see LICENSE for details.
 
