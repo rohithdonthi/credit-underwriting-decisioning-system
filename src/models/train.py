@@ -61,7 +61,7 @@ def main():
     base.fit(X_train, y_train)
 
     # calibrate using a held-out calibration slice
-    calibrated = CalibratedClassifierCV(base, method="sigmoid", cv="prefit")
+    calibrated = CalibratedClassifierCV(base, method="sigmoid", cv=5)
     calibrated.fit(X_calib, y_calib)
 
     # evaluate on test
