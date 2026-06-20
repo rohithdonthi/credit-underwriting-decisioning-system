@@ -1,18 +1,22 @@
 {
   "features": [
-    "income",
-    "utilization",
-    "dti",
-    "delinq_12m",
-    "inquiries_6m",
-    "tradelines",
-    "thin_file",
-    "high_util"
+    "fico8",
+    "revolving_utilization",
+    "delinq_24mo_count",
+    "worst_delinq_24mo",
+    "inquiries_12mo_hard",
+    "has_bankruptcy",
+    "has_collection",
+    "monthly_salary",
+    "balance_to_income",
+    "thin_file_flag",
+    "months_since_oldest_account",
+    "tradelines_total"
   ],
   "target": "good",
   "time_col": "ym",
   "split_info": {
-    "train_months": [
+    "train": [
       "2022-01-01",
       "2022-02-01",
       "2022-03-01",
@@ -30,25 +34,25 @@
       "2023-03-01",
       "2023-04-01"
     ],
-    "calib_months": [
+    "calib": [
       "2023-05-01",
       "2023-06-01",
       "2023-07-01",
       "2023-08-01"
     ],
-    "test_months": [
+    "test": [
       "2023-09-01",
       "2023-10-01",
       "2023-11-01",
       "2023-12-01"
     ]
   },
-  "metrics_test": {
-    "auc_roc": 0.7334919690660322,
-    "auc_pr": 0.6269318831687996,
-    "brier": 0.20954022089924895,
-    "ks": 0.36991869918699183,
-    "lift_10pct": 1.9047619047619047,
+  "metrics": {
+    "auc_roc": 0.9951417806860996,
+    "auc_pr": 0.9926553210142115,
+    "brier": 0.046121980508166946,
+    "ks": 0.9512195121951219,
+    "lift_10pct": 2.5,
     "positive_rate": 0.4
   }
 }
